@@ -81,6 +81,28 @@ a {
 .header-link {
   padding-top: 24px;
   padding-bottom: 24px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.32px;
+  color: #2e2f42;
+}
+
+.nav-studio {
+  color: var(--ocean, #404bbf);
+}
+
+.nav-studio::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--ocean, #404bbf);
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  margin: 0;
 }
 
 /* Contacts(header) */
@@ -122,15 +144,8 @@ header .studio-logo {
 
 /* Navigation */
 
-.nav-studio {
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.32px;
-  color: #2e2f42;
-}
-
-.nav-studio:hover,
-.nav-studio:focus {
+.nav-contacts:hover,
+.nav-portfolio:hover {
   color: #404bbf;
 }
 
@@ -140,6 +155,15 @@ header .studio-logo {
   background-color: #2e2f42;
   padding-top: 188px;
   padding-bottom: 188px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(/images/hero-background-image.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .first-sect-cont {
@@ -194,6 +218,23 @@ button {
   flex-direction: column;
   align-items: flex-start;
   width: calc((100% - 72px) / 4);
+  gap: 8px;
+}
+
+.feature-icon-bg {
+  width: 264px;
+  height: 112px;
+  border-radius: 4px;
+  border: 1px solid var(--lightslate, #8e8f99);
+  background: var(--cloud, #f4f4fd);
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .second-section-title {
@@ -201,7 +242,6 @@ button {
   letter-spacing: 0.4px;
   font-weight: 500;
   line-height: 120%;
-  margin-bottom: 8px;
 }
 
 .visually-hidden {
@@ -270,6 +310,7 @@ button {
   width: 264px;
   padding-bottom: 32px;
   padding-top: 32px;
+  gap: 8px;
 }
 
 .third-section-title {
@@ -278,13 +319,33 @@ button {
   font-weight: 500;
   line-height: 120%;
   text-align: center;
-  margin-bottom: 8px;
 }
 
 .third-section-text {
   font-size: 16px;
   letter-spacing: 0.32px;
   text-align: center;
+}
+
+.team-icon-list {
+  display: flex;
+  gap: 24px;
+}
+
+.team-icon-bg {
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.sm-icon {
+  fill: #f4f4fd;
+}
+
+.team-icon-bg:hover {
+  background-color: #404bbf;
 }
 
 /* Forth section */
@@ -331,6 +392,28 @@ button {
   background: var(--white, #fff);
 }
 
+.project-overlay-cont {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  background-color: #4d5ae5;
+  transform: translateY(100%);
+  padding: 40px 32px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 250ms ease-in-out;
+  color: #f4f4fd;
+}
+
+.project-item:hover .overlay {
+  transform: translateY(0);
+}
+
 .project-item img {
   width: 100%;
   height: 100%;
@@ -373,4 +456,35 @@ button {
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
+}
+
+.footer-cont {
+  display: flex;
+}
+
+.footer-sm-text {
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.footer-logo-text-cont {
+  margin-right: 120px;
+}
+
+.footer-icon-bg {
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.footer-icon-bg:hover {
+  background-color: #31d0aa;
+}
+
+.footer-icon-list {
+  display: flex;
+  gap: 16px;
 }
